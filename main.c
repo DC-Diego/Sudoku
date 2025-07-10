@@ -1,11 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
+#include "tabuleiro.h"
 
 
 
 
 
 int main() {
-    printf("Hello, World!\n");
+    srand(time(NULL));
+    criarTabuleiro();
+    printarTabuleiro();
+    int e;
+    scanf("%d", &e);
     return 0;
 }

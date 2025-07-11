@@ -11,6 +11,8 @@
 int main() {
     srand(time(NULL));
     criarTabuleiro();
+    esconderTabuleiro(2);
+
     printarTabuleiro();
     int e;
     scanf("%d", &e);

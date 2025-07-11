@@ -3,7 +3,8 @@
 
 extern int tabuleiro[9][9];
 
-
+int MatrizContem(int *matriz, int size, int num);
+int esconderTabuleiro(int dificuldade);
 int tabuleiroValido(int i, int j, int num);
 void setarTabuleiro(int i, int j, int num);
 int criarTabuleiro();

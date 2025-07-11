@@ -6,6 +6,37 @@
 
 
 int tabuleiro[9][9] = {0};
+int* idHiddens;
+
+
+int MatrizContem(int *matriz, int size, int num){
+  for(int h = 0; h < size;h++){
+    if(idHiddens[h]==num)
+    return 1;
+  }
+
+
+  return 0;
+}
+
+
+int esconderTabuleiro(int dificuldade){
+  idHiddens = (int*) malloc(sizeof(int)*10*dificuldade);
+  for (int i = 0; i < 10*dificuldade; i++)
+  {
+    int num;
+    do{
+      num = rand()%81;
+    }while(MatrizContem(idHiddens, i, num));
+    idHiddens[i] = num;
+
+  }
+  for(int i =0; i < 10*dificuldade; i++){
+    tabuleiro[idHiddens[i]/9][idHiddens[i]%9] = 0;
+  }
+
+
+}
 
 
 

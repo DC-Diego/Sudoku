@@ -13,11 +13,8 @@ gcc %tree%tabuleiro.o main.c -o %tree%exec1
 
 
 cd %tree%
-color 0a
-
-
 
 .\exec1
 
-pause
+
 

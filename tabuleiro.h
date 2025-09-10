@@ -5,7 +5,7 @@ extern int tabuleiro[9][9];
 extern int* idHiddens;
 
 int venceuJogo();
-int MatrizContem(int *matriz, int size, int num);
+int MatrizContem(int *matriz, int num);
 int esconderTabuleiro(int dificuldade);
 int tabuleiroValido(int i, int j, int num);
 void setarTabuleiro(int i, int j, int num);

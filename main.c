@@ -15,21 +15,15 @@ void cleanBuffer(){
 }
 
 void jogo(){
-  //  printf("idHIDD [0]: %d\n", idHiddens[0]);
     while(1){
-       system("cls");
         if(kbhit()){
-            
             int tecla = getch();
-
-
-
             if(tecla == 27){ // ESC
                 jogando = 0;
                 printf("Saindo...\n");
                 break;
             }else if(tecla >= '0' && tecla <= '9'){
-                if(MatrizContem(idHiddens, 4*10,posicao)){
+                if(MatrizContem(idHiddens, posicao)){
                     int num = tecla - '0';
                     setarTabuleiro( posicao/9, posicao%9 ,num);
                   //  printf("%d",num);
@@ -64,21 +58,15 @@ void jogo(){
 
             }
             cleanBuffer();
+            system("cls");
+            printarTabuleiro(posicao);
         }
         if(venceuJogo()){
             printf("VOCE VENCEU!");
             getchar();
         }
-        
-
-
-        printf("POSI%d\n", posicao);
-        printarTabuleiro(posicao);
         Sleep(400);
     }
-
-
-    
 }
 
 
@@ -86,7 +74,7 @@ int main() {
     srand(time(NULL));
     criarTabuleiro();
     esconderTabuleiro(1);
-jogo();
-    // printarTabuleiro();
+    printarTabuleiro(posicao);
+    jogo();
     return 0;
 }

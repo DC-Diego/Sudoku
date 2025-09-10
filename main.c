@@ -73,7 +73,7 @@ void jogo(){
 int main() {
     srand(time(NULL));
     criarTabuleiro();
-    esconderTabuleiro(1);
+    esconderTabuleiro(2);
     printarTabuleiro(posicao);
     jogo();
     return 0;

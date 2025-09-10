@@ -94,7 +94,6 @@ void setarTabuleiro(int i, int j, int num){
   tabuleiro[i][j] = num;
 }
 
-
 int criarTabuleiro(){
   
   for (int i = 0; i < 9; i++) {

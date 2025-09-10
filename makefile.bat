@@ -3,12 +3,12 @@ cls
 echo code:
 echo '
 
-set tree=C:\Users\Micro\Desktop\C\Sudoku_exes\
+set tree=.\Sudoku_exes\
 
 
 gcc -c tabuleiro.c -o %tree%tabuleiro.o
 
-gcc %tree%tabuleiro.o main.c -o %tree%exec
+gcc %tree%tabuleiro.o main.c -o %tree%exec1
 
 
 
@@ -17,7 +17,7 @@ color 0a
 
 
 
-.\exec
+.\exec1
 
 pause
 

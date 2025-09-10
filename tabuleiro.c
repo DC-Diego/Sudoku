@@ -22,7 +22,7 @@ int MatrizContem(int *matriz, int size, int num){
 
 int esconderTabuleiro(int dificuldade){
   idHiddens = (int*) malloc(sizeof(int)*10*dificuldade);
-  for (int i = 0; i < 10*dificuldade; i++)
+  for (int i = 0; i <= 10*dificuldade; i++)
   {
     int num;
     do{
@@ -31,7 +31,7 @@ int esconderTabuleiro(int dificuldade){
     idHiddens[i] = num;
 
   }
-  for(int i =0; i < 10*dificuldade; i++){
+  for(int i =0; i <= 10*dificuldade; i++){
     tabuleiro[idHiddens[i]/9][idHiddens[i]%9] = 0;
   }
 
@@ -94,7 +94,22 @@ y
   return 1;
 
 }
+int venceuJogo(){
+  for (int i = 0; i < 9; i++)
+  {
+    for (int j = 0; j < 9; j++)
+    {
+      if(tabuleiro[i][j]==0 || tabuleiroValido(i,j,tabuleiro[i][j]) == 0)
+        return 0;
+    }
+  }
+  return 1;  
 
+
+
+
+
+}
 
 void setarTabuleiro(int i, int j, int num){
   tabuleiro[i][j] = num;
@@ -132,23 +147,32 @@ int criarTabuleiro(){
   return 1;
 }
 
-
-void printarTabuleiro(){
+int aux = 1;
+void printarTabuleiro(int posicao){
+  aux = (aux)?0:1;
   printf("Tabuleiro:\n");
+  // printf("*----| 1 | 2 | 3 |  | 4 | 5 | 6 |  | 7 | 8 | 9 |\n");
+  // printf("*----|-----------*-*------------*-*------------*\n");
   for (int i = 0; i < 9; i++)
   {
+    // printf("*- %d ", i+1);
     for (int j = 0; j < 9; j++)
     {
-      printf("%d ",tabuleiro[i][j]);
+      if(i*9+j==posicao && aux){
+        printf("| * ");
+        // tabuleiro[idHiddens[i]/9][idHiddens[i]%9] = 0;
+      }else  if(tabuleiro[i][j])
+        printf("| %d ", tabuleiro[i][j]);
+      else
+        printf("|   ");
       if(j%3==2)
-        printf("  ");
+        printf("|  ");
+      
     }
-     if(i%3==2)
-        printf("\n");
+    if(i%3==2)
+      printf("\n");
     printf("\n");
   }
-
-
 
 }
 
